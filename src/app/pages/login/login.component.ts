@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { Router, RouterLink } from '@angular/router';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
