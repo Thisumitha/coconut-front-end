@@ -8,10 +8,12 @@ import { ReviewCardsComponent } from '../review-cards/review-cards.component';
 import { ContactUsComponent } from '../contact-us/contact-us.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsServiceService } from '../../services/products-service.service';
+import { CardsComponent } from '../cards/cards.component';
+import { ServicesComponent } from '../services/services.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent,IntroPageComponent,ProductsComponent,FooterComponent,ReviewCardsComponent,ContactUsComponent,HttpClientModule],
+  imports: [NavbarComponent,IntroPageComponent,ProductsComponent,FooterComponent,ReviewCardsComponent,ContactUsComponent,HttpClientModule,CardsComponent,ServicesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

@@ -12,7 +12,7 @@
 }
 
 .intro-background{
-  background-image: url("/assets/background.jpg");
+  background-image: url("/assets/back-1.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,4 +61,9 @@
   .intro-text{
     height: 25vh;
   }
+}
+.logoBack{
+  border-radius: 150px;
+  height: 100px;
+  
 }
