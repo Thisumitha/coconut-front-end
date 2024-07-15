@@ -5,10 +5,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { routes } from '../../app.routes';
+import { FooterComponent } from "../../components/footer/footer.component";
 @Component({
   selector: 'app-products-page',
   standalone: true,
-  imports: [NavbarComponent, HttpClientModule,CommonModule],
+  imports: [NavbarComponent, HttpClientModule, CommonModule, FooterComponent],
   templateUrl: './products-page.component.html',
   styleUrl: './products-page.component.css'
 })
