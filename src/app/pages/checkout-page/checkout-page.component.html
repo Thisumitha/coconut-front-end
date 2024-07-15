@@ -15,8 +15,8 @@
         <ul class="list-group mb-3">
           <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>
-              <h6 class="my-0 fs-5 fw-bold mb-lg-3">{{product.product_name}}</h6>
-              <small class="text-body-secondary fs-5 mb-lg-4">{{product.product_description}}</small>
+              <h6 class="my-0 fs-5 fw-bold mb-lg-3">{{company.product_name}}</h6>
+              <small class="text-body-secondary fs-5 mb-lg-4">{{company.product_description}}</small>
             </div>
             <!-- <span class="text-body-secondary">{{product.product_price}}</span> -->
           </li>
@@ -43,7 +43,7 @@
           </li> -->
           <li class="list-group-item d-flex justify-content-between">
             <span>Total (RS)</span>
-            <strong>Rs.{{product.product_price}}</strong>
+            <strong>Rs.{{company.product_price}}</strong>
           </li>
         </ul>
 
@@ -56,7 +56,7 @@
       </div>
       <div class="col-md-7 col-lg-5">
         <h4 class="mb-3">Your Details</h4>
-        <form class="needs-validation" novalidate (ngSubmit)="sendEmailToDev()">
+        <form class="needs-validation" novalidate (ngSubmit)="sendEmailToCustomer()">
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">First name</label>
