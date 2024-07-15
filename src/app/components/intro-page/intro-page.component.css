@@ -65,11 +65,17 @@
   }
 }
 .logoBack{
-  border-radius: 150px;
-  height: 200px;
+  border-radius: 200px;
+  height: 300px;
   
   
 }
 .titleimage{
   font-size: 100px;
+}
+.text-orange{
+  color: darkorange;
+}
+.font{
+  font-size: 30px;
 }
