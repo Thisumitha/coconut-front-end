@@ -27,3 +27,10 @@
   width: 100vw; /* 100% of the viewport width */
   height: 100vh; /* 100% of the viewport height */
       }
+
+      .bg-image{
+      
+        background-image: url("/assets/doc.jpeg");
+        background-size: cover; background-repeat: no-repeat; background-position: center;
+      }
+      
