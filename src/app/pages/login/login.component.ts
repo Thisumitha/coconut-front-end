@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { RouterLink } from '@angular/router';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
@@ -11,5 +11,8 @@ import { NavbarComponent } from "../../components/navbar/navbar.component";
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
+  @ViewChild('target-element') targetElement!: ElementRef;
+  scrollToTarget(): void{
+    this.targetElement.nativeElement.srollIntoView({behavior: 'smooth'})
+  }
 }
