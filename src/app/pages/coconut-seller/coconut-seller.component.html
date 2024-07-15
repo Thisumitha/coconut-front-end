@@ -2,20 +2,20 @@
 <div class="container-fluid products">
   <p class="text-center fw-bold fs-3 ">Our Products</p>
   <div class="row p-3 gy-3">
-    <!-- <div *ngFor="let card of products" class="col-lg-3 p-3 mx-auto col-sm-12">
+    <div *ngFor="let card of companies" class="col-lg-3 p-3 mx-auto col-sm-12">
       <div class="card border  border-2 shadow">
-        <img src="{{card.img_url}}" class="card-img" >
+        <img src="{{card.br_image}}" class="card-img" >
         <div class="card-img-overlay">
             <p class="card-subtitle fs-5 fw-semibold text-white text-center">A Fully fledged Gym management system</p>
             <a href="" data-bs-toggle="modal" data-bs-target="#products-modal" (click)="setValue(card)" class="btn btn-outline-light detail-btn btn-sm">More Details</a>
         </div>
         <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item">{{card.product_name}}</li>
+            <li class="list-group-item">{{card.name}}</li>
         </ul>
     </div>
 
-    </div> -->
-    <div data-aos="fade-down"  class="col-lg-3 p-3 mx-auto col-sm-12">
+    </div>
+    <!-- <div data-aos="fade-down"  class="col-lg-3 p-3 mx-auto col-sm-12">
       <div class="card border  border-2">
         <img src="./assets/TechForge-product-1.png" class="card-img" >
         <div class="card-img-overlay">
@@ -27,29 +27,32 @@
 
         </ul>
     </div>
-    </div>
+    </div> -->
     <!-- <div class="col-lg-3 p-3 mx-auto col-sm-12 border border-dark ">dsdsadasdasdadas</div> -->
   </div>
 </div>
 
-<!-- <div class="modal fade modal-centered" id="products-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade modal-centered" id="products-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{selectedCard?.product_name}}</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{selectedSeller?.product_name}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p class="fs-5 fw-bolder">Features</p>
+        <p class="fs-5 fw-bolder">Details</p>
         <ul>
-          <li *ngFor="let feature of features">{{feature.product_feature}}</li>
+          <li>Username:- {{selectedSeller?.username}}</li>
+          <li>Br:- {{selectedSeller?.br}}</li>
+          <li>Phone Number:- {{selectedSeller?.phone}}</li>
+          <li>Address:- {{selectedSeller?.address}}</li>
         </ul>
-        <p class="fs-5 bolder fw-bold">Price:- Rs.{{selectedCard?.product_price}}</p>
+        <p class="fs-5 bolder fw-bold">Price:- Rs.{{selectedSeller?.buying_price}}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="purchaseProduct()" data-bs-dismiss="modal">Purchase</button>
+        <button type="button" class="btn btn-primary" (click)="sellCoconut()"  data-bs-dismiss="modal">Purchase</button>
       </div>
     </div>
   </div>
-</div> -->
+</div>

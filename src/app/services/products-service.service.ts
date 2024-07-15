@@ -7,23 +7,47 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsServiceService {
-  private baseUrl = 'http://192.168.1.112:5000';
+  private baseUrl = 'http://localhost:3000';
 
-  private productSource = new BehaviorSubject<any>(null);
-  currentProduct = this.productSource.asObservable();
+  private sellerSource = new BehaviorSubject<any>(null);
+  currentSeller = this.sellerSource.asObservable();
 
-  changeProduct(product: any){
-    this.productSource.next(product);
+  changeSeller(product: any){
+    this.sellerSource.next(product);
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient){}
 
-  getProducts(): Observable<any[]>{
-    return this.http.get<any[]>(this.baseUrl+'/products');
+  login(username: string, password: string): Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/login`, { username, password });
   }
 
-  getFeatures(id:any): Observable<any[]>{
-    return this.http.get<any[]>(this.baseUrl+'/features/'+id);
+  createCoconutLot(coconutLotData: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/coconut_lot`, coconutLotData);
+  }
+
+  getAllCoconutLots(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/coconut_lot`);
+  }
+
+  updateCoconutLot(id: string, updates: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/coconut_lot/${id}`, updates);
+  }
+
+  createCompany(companyData: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/company`, companyData);
+  }
+
+  getAllCompanies(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/company`);
+  }
+
+  updateCompany(id: string, updates: any): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/company/${id}`, updates);
+  }
+
+  deleteCompany(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/company/${id}`);
   }
 
 }
