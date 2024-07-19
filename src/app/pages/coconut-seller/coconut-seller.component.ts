@@ -16,10 +16,11 @@ import emailjs from 'emailjs-com';
   styleUrl: './coconut-seller.component.css'
 })
 export class CoconutSellerComponent implements OnInit{
-
   companies: any[] = []
-  selectedSeller: any;
+  selectedOrder: any;
   company: any;
+  orderQty: Number = 0;
+  lotQty: Number = 0;
   private emailKey = 'Wyun_B-TucLaPaAQK';
 
   constructor(private productService: ProductsServiceService, private http: HttpClient, private router: Router){}
@@ -43,12 +44,12 @@ export class CoconutSellerComponent implements OnInit{
   }
 
   setValue(card:any){
-    this.selectedSeller=card;
-    console.log(this.selectedSeller);
+    this.selectedOrder=card;
+    console.log(this.selectedOrder);
   }
 
   sellCoconut(){
-    this.productService.changeSeller(this.selectedSeller);
+    this.productService.changeSeller(this.selectedOrder);
     // this.router.navigate(['/checkout']);
     this.sendEmailToCustomer();
   }
@@ -57,7 +58,7 @@ export class CoconutSellerComponent implements OnInit{
     const templateParams ={
       to_email: this.company.email,
       to_name:this.company.name,
-      from_name: this.selectedSeller.name
+      from_name: this.selectedOrder.name
     };
 
     emailjs.send('service_uhcbsno','template_hgjq5r8', templateParams, this.emailKey)
@@ -76,6 +77,10 @@ export class CoconutSellerComponent implements OnInit{
         text: "Somthing went wrong try again later"
       })
     });
+  }
+
+  updateQuantity(){
+    
   }
 
 }

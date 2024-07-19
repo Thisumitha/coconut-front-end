@@ -12,8 +12,11 @@ export class ProductsServiceService {
   private sellerSource = new BehaviorSubject<any>(null);
   currentSeller = this.sellerSource.asObservable();
 
-  changeSeller(product: any){
-    this.sellerSource.next(product);
+  private companySource = new BehaviorSubject<any>(null);
+  currentCompany = this.sellerSource.asObservable();
+
+  changeSeller(sellerId: String){
+    this.sellerSource.next(sellerId);
   }
 
   constructor(private http: HttpClient){}
@@ -23,15 +26,15 @@ export class ProductsServiceService {
   }
 
   createCoconutLot(coconutLotData: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/coconut_lot`, coconutLotData);
+    return this.http.post<any>(`${this.baseUrl}/coconut`, coconutLotData);
   }
 
-  getAllCoconutLots(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/coconut_lot`);
+  getCoconutLots(sellerId:string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/coconut/seller/${sellerId}`);
   }
 
   updateCoconutLot(id: string, updates: any): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/coconut_lot/${id}`, updates);
+    return this.http.put<any>(`${this.baseUrl}/coconut/${id}`, updates);
   }
 
   createCompany(companyData: any): Observable<any> {
@@ -39,7 +42,7 @@ export class ProductsServiceService {
   }
 
   getAllCompanies(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/company`);
+    return this.http.get<any>(`${this.baseUrl}/order`);
   }
 
   updateCompany(id: string, updates: any): Observable<any> {
