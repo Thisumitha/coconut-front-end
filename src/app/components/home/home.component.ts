@@ -10,10 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsServiceService } from '../../services/products-service.service';
 import { CardsComponent } from '../cards/cards.component';
 import { ServicesComponent } from '../services/services.component';
+import { CarouselComponent } from '../carousel/carousel.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent,IntroPageComponent,ProductsComponent,FooterComponent,ReviewCardsComponent,ContactUsComponent,HttpClientModule,CardsComponent,ServicesComponent],
+  imports: [NavbarComponent,IntroPageComponent,ProductsComponent,FooterComponent,ReviewCardsComponent,ContactUsComponent,HttpClientModule,CardsComponent,ServicesComponent,CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
