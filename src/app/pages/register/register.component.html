@@ -1,118 +1,94 @@
-<app-navbar></app-navbar>
 
-<div class="vh-100 bg-image mt-5 fit-image"
-  style="background-image: url('/assets/doc.jpeg'); ">
-  <div class="mask d-flex align-items-center  gradient-custom-3">
+
+<div class="container-fluid gradient-custom-3  mt-5 ">
+    
+<div class="vh-100 bg-image mt-5 fit-image " style="">
+    <app-navbar></app-navbar>
+  <div class="mask d-flex align-items-center mt-5 ">
     <div class="container">
-      <div class="row d-flex justify-content-center align-items-center ">
+      <div class="row d-flex justify-content-center align-items-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1cg">Your Name</label>
+              <form class="row g-3">
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3ExampleUsername" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleUsername">Username</label>
+                  </div>
                 </div>
 
-
-                <form class="row g-3">
-
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline ">
-                            <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1cg">Your Name</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline">
-                            <input type="text" id="form3Example2cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example2cg">Business Registration</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline ">
-                            <input type="text" id="form3Example3cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example3cg">Business Registration Photo</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline ">
-                            <input type="email" id="form3Example4cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example4cg">Your Email</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline ">
-                            <input type="text" id="form3Example5cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example5cg">Your Name</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline">
-                            <input type="email" id="form3Example6cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example6cg">Your Address</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline ">
-                            <input type="text" id="form3Example7cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example7cg">Your Phone Number</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline ">
-                            <input type="text" id="form3Example8cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example8cg">Buying Price</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline ">
-                            <input type="password" id="form3Example9cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example9cg">Password</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-md-6">
-                        <div data-mdb-input-init class="form-outline ">
-                            <input type="password" id="form3Example10cg" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example10cg">Repeat Your Password</label>
-                        </div>
-                    </div>
-                
-                    <div class="col-12">
-                        <div class="form-check d-flex justify-content-center ">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                            <label class="form-check-label" for="form2Example3g">
-                                I agree to all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                            </label>
-                        </div>
-                    </div>
-                
-                    <div class="col-12 d-flex justify-content-center">
-                        <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                    </div>
-                
-                    <div class="col-12 text-center text-muted mt-5 mb-0">
-                        Have already an account? <a routerLink="/login" class="fw-bold text-body"><u>Login here</u></a>
-                    </div>
-                    <br><br><br><br>
-                
-                </form>
-                
-
-                        </div>
-                    </div>
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="password" id="form3ExamplePassword" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExamplePassword">Password</label>
+                  </div>
                 </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3ExampleCompanyName" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleCompanyName">Company Name</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3ExampleBR" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleBR">Business Registration</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="file" id="form3ExampleBRImage" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                    <label class="form-label" for="form3ExampleBRImage">Business Registration Photo</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="email" id="form3ExampleEmail" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleEmail">Your Email</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3ExampleAddress" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleAddress">Your Address</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="text" id="form3ExamplePhoneNumber" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExamplePhoneNumber">Your Phone Number</label>
+                  </div>
+                </div>
+
+               
+
+                <div class="col-12 d-flex justify-content-center">
+                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <div class="col-12 text-center text-muted mt-5 mb-0">
+                  Have already an account? <a routerLink="/login" class="fw-bold text-body"><u>Login here</u></a>
+                </div>
+                <br><br><br><br>
+
+              </form>
+
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+  
+</div>
 </div>
