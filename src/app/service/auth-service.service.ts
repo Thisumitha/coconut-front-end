@@ -1,27 +1,52 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { ProductsServiceService } from '../services/products-service.service';
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthServiceService {
 
-  constructor(private router: Router) { }
+  private userId: String = '';
 
-  login(userType: string): void {
+  private sellerSource = new BehaviorSubject<any>(null);
+  currentSeller = this.sellerSource.asObservable();
+
+  private companySource = new BehaviorSubject<any>(null);
+  currentCompany = this.sellerSource.asObservable();
+
+  changeSeller(sellerId: string){
+    this.sellerSource.next(sellerId);
+  }
+
+  changeCompany(companyId: String){
+    this.companySource.next(companyId);
+  }
+
+  constructor(private router: Router, private productService: ProductsServiceService) { }
+
+  login(userType: string,id:string): void {
     localStorage.setItem('userType', userType);
     this.router.navigate([this.getDashboardRoute(userType)]);
+    this.userId=id;
+    console.log(this.userId);
+
+    switch(userType){
+      case 'seller':this.changeSeller(id);localStorage.setItem('seller',id);sessionStorage.setItem('seller',id); break;
+      case 'company':this.changeCompany(id);localStorage.setItem('company',id);sessionStorage.setItem('company',id);break;
+    }
   }
 
   logout(): void {
-    localStorage.removeItem('userType');
+    sessionStorage.clear();
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 
   getDashboardRoute(userType: string): string {
     switch (userType) {
-      case 'coconut_lot':
-        return '/coconut-dashboard'; // Replace with your CoconutLot dashboard route
+      case 'seller':
+        return '/coconut-dashboard';// Replace with your CoconutLot dashboard route
       case 'company':
         return '/company-dashboard'; // Replace with your Company dashboard route
       default:
