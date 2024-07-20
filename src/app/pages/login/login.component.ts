@@ -25,14 +25,14 @@ export class LoginComponent {
 
     this.product_service.login(this.username,this.password).subscribe(response => {
       localStorage.setItem('userType', response.userType);
-      this.authService.login(response.userType);
+      this.authService.login(response.userType,response.userId);
 
       Swal.fire({
         icon: 'success',
         title: 'Login Successful!',
-        text: `Welcome, ${this.username}!`,
-        timer: 1000, // Automatically close after 2 seconds
-        showConfirmButton: false
+        text: `Welcome Logged in as ${response.userType}, ${this.username}!`,
+        //timer: 2000, // Automatically close after 2 seconds
+        showConfirmButton: true
       }).then(() => {
         const dashboardRoute = this.getDashboardRoute(response.userType);
         this.router.navigate([dashboardRoute]);
@@ -48,7 +48,7 @@ export class LoginComponent {
 
   getDashboardRoute(userType:string){
     switch(userType){
-      case 'coconut_lot': return '/coconut-dashboard';
+      case 'seller': return '/coconut-dashboard';
       case 'company': return '/company-dashboard';
       default: return '/login';
     }
