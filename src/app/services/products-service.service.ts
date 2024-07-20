@@ -29,8 +29,18 @@ export class ProductsServiceService {
     return this.http.post<any>(`${this.baseUrl}/coconut`, coconutLotData);
   }
 
-  getCoconutLots(sellerId:string): Observable<any> {
+  getCoconutLots(sellerId:any): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/coconut/seller/${sellerId}`);
+  }
+
+  getAllCoconuts(): Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/coconut`);
+  }
+
+  findSeller(sellerId:string): Observable<any> {
+    console.log(sellerId);
+
+    return this.http.get<any>(`${this.baseUrl}/seller/${sellerId}`);
   }
 
   updateCoconutLot(id: string, updates: any): Observable<any> {
@@ -46,11 +56,11 @@ export class ProductsServiceService {
   }
 
   updateCompany(id: string, updates: any): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/company/${id}`, updates);
+    return this.http.put<any>(`${this.baseUrl}/order/${id}`, updates);
   }
 
-  deleteCompany(id: string): Observable<any> {
-    return this.http.delete<any>(`${this.baseUrl}/company/${id}`);
+  deleteOrder(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/order/${id}`);
   }
 
 }

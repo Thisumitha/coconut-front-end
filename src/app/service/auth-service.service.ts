@@ -15,7 +15,7 @@ export class AuthServiceService {
   private companySource = new BehaviorSubject<any>(null);
   currentCompany = this.sellerSource.asObservable();
 
-  changeSeller(sellerId: String){
+  changeSeller(sellerId: string){
     this.sellerSource.next(sellerId);
   }
 
@@ -23,7 +23,7 @@ export class AuthServiceService {
     this.companySource.next(companyId);
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private productService: ProductsServiceService) { }
 
   login(userType: string,id:string): void {
     localStorage.setItem('userType', userType);
@@ -32,13 +32,14 @@ export class AuthServiceService {
     console.log(this.userId);
 
     switch(userType){
-      case 'seller':this.changeSeller(id); break;
-      case 'company':this.changeCompany(id); break;
+      case 'seller':this.changeSeller(id);localStorage.setItem('seller',id);sessionStorage.setItem('seller',id); break;
+      case 'company':this.changeCompany(id);localStorage.setItem('company',id);sessionStorage.setItem('company',id);break;
     }
   }
 
   logout(): void {
-    localStorage.removeItem('userType');
+    sessionStorage.clear();
+    localStorage.clear();
     this.router.navigate(['/login']);
   }
 

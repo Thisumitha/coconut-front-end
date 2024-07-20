@@ -65,4 +65,21 @@
   color: #00eeff;
 }
 
+.carousel-img{
+  min-height: 400px;
+  min-width: 800px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: #000 !important; /* Black color for control icons */
+}
+
+.floating-button{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
+}
+
 

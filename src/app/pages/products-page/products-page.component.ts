@@ -15,35 +15,32 @@ import { FooterComponent } from "../../components/footer/footer.component";
 })
 export class ProductsPageComponent implements OnInit{
 
-  // products: any[] = [];
-  // features: any[] = [];
-  // selectedCard: any;
+  products: any[] = [];
+  coconutLots: any;
+  selectedLot: any;
 
-  // constructor(private productService:ProductsServiceService, private router: Router) {}
+  constructor(private productService:ProductsServiceService, private router: Router) {}
 
-  // ngOnInit(): void {
+  ngOnInit(): void {
+      this.getLots();
+  }
 
-  //   this.getProducts();
-  // }
+      getLots(){
+        this.productService.getAllCoconuts().subscribe(
+          (response)=>{
+            this.coconutLots=response;
+            console.log(this.coconutLots);
+          },
+          (error) =>{
+            console.error(error);
+          }
+        );
+      }
 
-  //     getProducts(){
-  //       this.productService.getProducts().subscribe(
-  //         (response)=>{
-  //           this.products=response;
-  //           console.log(this.products);
-
-  //         },
-  //         (error) =>{
-  //           console.error(error);
-  //         }
-  //       );
-  //     }
-
-  //     setValue(card:any){
-  //       this.selectedCard=card;
-  //       console.log(this.selectedCard);
-  //       this.getFeatures(this.selectedCard.id);
-  //     }
+      setValue(card:any){
+        this.selectedLot=card;
+        console.log(this.selectedLot);
+      }
 
   //     getFeatures(id:any){
   //       this.productService.getFeatures(id).subscribe(
@@ -58,9 +55,5 @@ export class ProductsPageComponent implements OnInit{
   //       this.productService.changeProduct(this.selectedCard);
   //       this.router.navigate(['/checkout']);
   //     }
-
-  ngOnInit(): void {
-
-  }
 
   }
