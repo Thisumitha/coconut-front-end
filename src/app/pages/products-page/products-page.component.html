@@ -19,11 +19,11 @@
       <div class="card border  border-2">
         <img src="{{card.lot_image}}" class="card-img" >
         <div class="card-img-overlay">
-            <p class="card-subtitle fs-5 fw-semibold text-white">Fully customizable and complete class management system</p>
+            <p class="card-subtitle fs-5 fw-semibold text-white"></p>
             <a href="" data-bs-toggle="modal" (click)="setValue(card)" data-bs-target="#productsModal" class="btn btn-outline-light detail-btn btn-sm">More Details</a>
         </div>
         <ul class="list-group list-group-flush text-center">
-            <li class="list-group-item">Class Management System</li>
+            <li class="list-group-item">{{card.seller.username}}</li>
 
         </ul>
     </div>
@@ -108,12 +108,12 @@
       <hr>
       <p class="fw-bold fs-5 ms-4">Details</p>
       <ul class="">
-        <li>Width:-   {{selectedLot?.width}}</li>
-        <li>Size:-    {{selectedLot?.size}}</li>
+        <li>Width :-   {{selectedLot?.width}}</li>
+        <li>Size  :-    {{selectedLot?.size}}</li>
         <li>Inside:-  {{selectedLot?.inside_state}}</li>
-        <li>Husk:-    {{selectedLot?.husk_state}}</li>
+        <li>Husk  :-    {{selectedLot?.husk_state}}</li>
         <li>Moisture:-  {{selectedLot?.moisture_state}}</li>
-        <li>Quantity:- {{selectedLot?.quantity}}</li>
+        <li class="fw-bold">Quantity:- {{selectedLot?.quantity}}</li>
 
       </ul>
       <div class="modal-footer">
@@ -122,6 +122,37 @@
     </div>
   </div>
 </div>
-<button class="btn btn-primary floating-button shadow">Add Order</button>
+<button class="btn btn-primary floating-button shadow" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button>
+
+<div class="modal fade" id="newOrderModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="inputModalLabel">Input Data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="createOrder()">
+          <div class="mb-3">
+            <label for="buyingPrice" class="form-label">Buying Price</label>
+            <input type="number" class="form-control" id="buyingPrice" [(ngModel)]="newOrder.buying_price" name="buying_price" required>
+          </div>
+          <div class="mb-3">
+            <label for="buyingQuantity" class="form-label">Buying Quantity</label>
+            <input type="number" class="form-control" id="buyingQuantity" [(ngModel)]="newOrder.buying_quantity" name="buying_quantity" required>
+          </div>
+          <!-- <div class="mb-3">
+            <label for="company" class="form-label">Company</label>
+            <input type="text" class="form-control" id="company" [(ngModel)]="inputData.company" name="company" required>
+          </div> -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 

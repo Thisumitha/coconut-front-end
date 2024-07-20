@@ -51,6 +51,10 @@ export class ProductsServiceService {
     return this.http.post<any>(`${this.baseUrl}/company`, companyData);
   }
 
+  createOrder(orderData:any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/order`,orderData);
+  }
+
   getAllCompanies(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/order`);
   }
@@ -61,6 +65,10 @@ export class ProductsServiceService {
 
   deleteOrder(id: string): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/order/${id}`);
+  }
+
+  findCompany(id:string): Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/company/${id}`);
   }
 
 }
