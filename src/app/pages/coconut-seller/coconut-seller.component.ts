@@ -234,4 +234,8 @@ export class CoconutSellerComponent implements OnInit{
     });
   }
 
+  getImageUrl(filename: string):string{
+    return `http://localhost:3000/assets/`
+  }
+
 }
