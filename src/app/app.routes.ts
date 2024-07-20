@@ -6,6 +6,7 @@ import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.compo
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { CoconutSellerComponent } from './pages/coconut-seller/coconut-seller.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 export const routes: Routes = [
   {
@@ -35,6 +36,10 @@ export const routes: Routes = [
   {
     path: "coconut-dashboard",
     component: CoconutSellerComponent
+  },
+  {
+    path: "no-more",
+    component: DetailsComponent
   }
 
 ];
