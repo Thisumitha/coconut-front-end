@@ -83,6 +83,33 @@ export class CoconutSellerComponent implements OnInit{
     this.updateQuantityOrder();
   }
 
+  sendRejectedEmail(){
+    const templateParams = {
+      to_email: this.selectedOrder.company.email,
+      to_name:this.selectedOrder.company.company_name,
+      from_name:this.seller.name,
+      message:"Your Buying order has been declined"
+    };
+
+    emailjs.send('service_uhcbsno','template_b3qq8dd', templateParams, this.emailKey)
+    .then((response)=>{
+      console.log('Order rejected Successfuly', response.status, response.text);
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Order Rejected Successfuly"
+      });
+    },
+    (error)=>{
+      console.log('Failed Reject', error);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Somthing went wrong try again later"
+      })
+    });
+  }
+
   sendEmailToCustomer(){
     console.log(this.selectedOrder.company.email);
 
@@ -227,6 +254,7 @@ export class CoconutSellerComponent implements OnInit{
       if(res){
         console.log('rejected order', this.selectedOrder._id);
         this.getCompanies();
+        this.sendRejectedEmail();
       }else{
         console.log("error");
         this.getCompanies();

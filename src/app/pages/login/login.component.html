@@ -39,7 +39,7 @@
                               <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                             </div>
 
-                            <a class="small text-muted" href="#!">Forgot password?</a>
+                            <a class="small text-muted" data-bs-toggle="modal" data-bs-target="#resetPasswordModal" href="#!">Forgot password?</a>
                             <p class="mb-5 pb-lg-2" style="color: #393f81;">If you are new company <a  routerLink="/register"
                                 style="color: #393f81;">Register here</a></p>
                             <a href="#!" class="small text-muted">Terms of use.</a>
@@ -49,6 +49,36 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="resetPasswordModal" tabindex="-1" role="dialog" aria-labelledby="resetPasswordModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="resetPasswordModalLabel">Reset Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form (ngSubmit)="resetPassword()">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+                        <button type="button" class="btn btn-secondary mt-2" (click)="getOtp()">Request OTP</button>
+                      </div>
+                      <div class="form-group">
+                        <label for="otp">OTP</label>
+                        <input type="text" class="form-control" id="otp" [(ngModel)]="otp" name="otp" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" [(ngModel)]="newPw" name="newPassword" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Reset Password</button>
+                    </form>
                   </div>
                 </div>
               </div>

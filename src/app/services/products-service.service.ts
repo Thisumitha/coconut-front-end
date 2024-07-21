@@ -47,6 +47,10 @@ export class ProductsServiceService {
     return this.http.put<any>(`${this.baseUrl}/coconut/${id}`, updates);
   }
 
+  findUser(username:string):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/login/find-user/${username}`);
+  }
+
   createCompany(companyData: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/company`, companyData);
   }
@@ -61,6 +65,14 @@ export class ProductsServiceService {
 
   updateCompany(id: string, updates: any): Observable<any> {
     return this.http.put<any>(`${this.baseUrl}/order/${id}`, updates);
+  }
+
+  updateSellerPassword(updates:any){
+    return this.http.post<any>(`${this.baseUrl}/seller/update-password/`,updates);
+  }
+
+  updateCompanyPassword(updates:any){
+    return this.http.post<any>(`${this.baseUrl}/seller/update-password/`,updates);
   }
 
   deleteOrder(id: string): Observable<any> {
