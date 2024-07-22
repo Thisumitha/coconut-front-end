@@ -25,7 +25,7 @@ export class ProductsServiceService {
     return this.http.post<any>(`${this.baseUrl}/login`, { username, password });
   }
 
-  createCoconutLot(coconutLotData: any): Observable<any> {
+  createCoconutLot(coconutLotData: FormData): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/coconut`, coconutLotData);
   }
 
@@ -82,5 +82,9 @@ export class ProductsServiceService {
   findCompany(id:string): Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/company/${id}`);
   }
+
+  // createCoconutLot(data: FormData): Observable<any>{
+  //   return this.http.post<any>(`${this.baseUrl}/coconut`, data);
+  // }
 
 }
