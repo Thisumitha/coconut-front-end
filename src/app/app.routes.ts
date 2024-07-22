@@ -46,5 +46,4 @@ export const routes: Routes = [
     path: "seller-stockReg",
     component: SellerStockRegComponent
   }
-
 ];

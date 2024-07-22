@@ -266,4 +266,8 @@ export class CoconutSellerComponent implements OnInit{
     return `http://localhost:3000/assets/`
   }
 
+  goToCreateLot(){
+    this.router.navigate(['/seller-stockReg'])
+  }
+
 }
