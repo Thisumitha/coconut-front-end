@@ -72,7 +72,7 @@ export class ProductsServiceService {
   }
 
   updateCompanyPassword(updates:any){
-    return this.http.post<any>(`${this.baseUrl}/seller/update-password/`,updates);
+    return this.http.post<any>(`${this.baseUrl}/company/update-password/`,updates);
   }
 
   deleteOrder(id: string): Observable<any> {

@@ -130,15 +130,15 @@ export class LoginComponent {
     };
     emailjs.send('service_uhcbsno','template_b3qq8dd', templateParams, this.emailKey)
     .then((response)=>{
-      console.log('Order rejected Successfuly', response.status, response.text);
+      console.log('An OTP has sent to your email', response.status, response.text);
       Swal.fire({
         icon: "success",
         title: "Success",
-        text: "Order Rejected Successfuly"
+        text: "OTP has been sent to your email"
       });
     },
     (error)=>{
-      console.log('Failed Reject', error);
+      console.log('Failed send OTP', error);
       Swal.fire({
         icon: "error",
         title: "Error",
@@ -163,7 +163,7 @@ export class LoginComponent {
                 response => {
                     const data = response;
                     if (data.userType === 'company') {
-                        this.product_service.updateCompanyPassword({ id: data.user._id, password: this.password }).subscribe(
+                        this.product_service.updateCompanyPassword({ id: data.user._id, newPassword: this.password }).subscribe(
                             res => {
                                 console.log('Password updated successfully:', res);
                                 Swal.fire({
