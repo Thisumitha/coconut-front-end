@@ -31,6 +31,10 @@ export class SellerStockRegComponent {
 
   onSubmit(){
     const formData = new FormData();
+    const sellerId = sessionStorage.getItem('seller');
+    if(sellerId){
+      this.coconutLot.seller=sellerId;
+    }
     for(let key in this.selectedFiles){
       formData.append(key, this.selectedFiles[key]);
     }
