@@ -1,108 +1,116 @@
 <div class="container-fluid gradient-custom-3 mt-5">
-    <div class="vh-100 bg-image mt-5 fit-image">
-      <app-navbar></app-navbar>
-      <div class="mask d-flex align-items-center mt-5">
-        <div class="container">
-          <br><br><br>
-          <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-              <div class="card" style="border-radius: 15px;">
-                <div class="card-body p-5">
-                  <h2 class="text-uppercase text-center mb-5">Coconut Lot Details</h2>
+  <div class="vh-100 bg-image mt-5 fit-image">
+    <app-navbar></app-navbar>
+    <div class="mask d-flex align-items-center mt-5">
+      <div class="container">
+        <br><br><br>
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Coconut Lot Details</h2>
 
-                  <form class="row g-3" (ngSubmit)="onSubmit()">
+                <form class="row g-3">
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3ExampleSize" [(ngModel)]="coconutLot.size" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3ExampleSize">Width</label>
-                      </div>
+
+
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3ExampleWidth" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3ExampleWidth">Width</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3ExampleHuskState" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3ExampleHuskState">Husk State</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3ExampleSize" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3ExampleSize">Size</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3ExampleMoistureState" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3ExampleMoistureState">Moisture State</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3ExampleHuskState" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3ExampleHuskState">Husk State</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3ExampleInsideState" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3ExampleInsideState">Inside State</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3ExampleMoistureState" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3ExampleMoistureState">Moisture State</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="file" id="form3ExampleLotImage" class="form-control form-control-lg" style="font-size: 0.875rem;" />
-                        <label class="form-label" for="form3ExampleLotImage">Lot Image</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3ExampleInsideState" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3ExampleInsideState">Inside State</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="file" id="form3ExampleType1" class="form-control form-control-lg" style="font-size: 0.875rem;" />
-                        <label class="form-label" for="form3ExampleType1">Type 1</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" id="form3ExampleLotImage" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleLotImage">Lot Image</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="file" id="form3ExampleType2" class="form-control form-control-lg" style="font-size: 0.875rem;" />
-                        <label class="form-label" for="form3ExampleType2">Type 2</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" id="form3ExampleType1" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleType1">Type 1</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="file" id="form3ExampleType3" class="form-control form-control-lg" style="font-size: 0.875rem;" />
-                        <label class="form-label" for="form3ExampleType3">Type 3</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" id="form3ExampleType2" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleType2">Type 2</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="file" id="form3ExampleWetCoconut" class="form-control form-control-lg" style="font-size: 0.875rem;" />
-                        <label class="form-label" for="form3ExampleWetCoconut">Wet Coconut</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" id="form3ExampleType3" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleType3">Type 3</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="file" id="form3ExampleDryCoconut" class="form-control form-control-lg" style="font-size: 0.875rem;" />
-                        <label class="form-label" for="form3ExampleDryCoconut">Dry Coconut</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" id="form3ExampleWetCoconut" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleWetCoconut">Wet Coconut</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="file" id="form3ExampleInsideImage" class="form-control form-control-lg" style="font-size: 0.875rem;" />
-                        <label class="form-label" for="form3ExampleInsideImage">Inside Image</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" id="form3ExampleDryCoconut" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleDryCoconut">Dry Coconut</label>
                     </div>
+                  </div>
 
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="number" id="form3ExampleQuantity" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3ExampleQuantity">Quantity</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" id="form3ExampleInsideImage" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleInsideImage">Inside Image</label>
                     </div>
+                  </div>
 
-                    <div class="col-12 d-flex justify-content-center">
-                      <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="number" id="form3ExampleQuantity" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3ExampleQuantity">Quantity</label>
                     </div>
+                  </div>
 
-                  </form>
+                  <div class="col-12 d-flex justify-content-center">
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
+                  </div>
 
-                </div>
+                </form>
+
               </div>
             </div>
           </div>
@@ -110,3 +118,4 @@
       </div>
     </div>
   </div>
+</div>
