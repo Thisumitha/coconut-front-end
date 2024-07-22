@@ -22,6 +22,11 @@
   font-size: 50px;
   
 }
+.barlow-condensed-thin {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
 
 .intro-background{
   background-image: url("/assets/back-1.jpeg");
