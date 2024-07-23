@@ -5,6 +5,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { ContactUsComponent } from "../../components/contact-us/contact-us.component";
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -46,6 +47,12 @@ export class RegisterComponent {
       this.http.post('http://localhost:3000/company', formData).subscribe(
         (response) => {
           console.log('Upload successful', response);
+          Swal.fire({
+            title: 'Success!',
+            text: 'Successfully registered as a Company.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          });
         },
         (error) => {
           console.error('Upload failed', error);

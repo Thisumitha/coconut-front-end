@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { ProductsServiceService } from '../../services/products-service.service';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-seller-stock-reg',
   standalone: true,
@@ -53,21 +54,14 @@ export class SellerStockRegComponent {
           response.dry_coconut,
           response.inside_image
         ].filter(image=>image);
+        Swal.fire({
+          title: 'Success!',
+          text: 'Coconut lot has been successfully saved.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
       },
       (error)=>console.log('Upload error',error)
     )
-
-    // this.productService.createCoconutLot(formData).subscribe((response:any)=>{
-    //   this.uploadedImages=[
-    //     response.lot_image,
-    //       response.type_1,
-    //       response.type_2,
-    //       response.type_3,
-    //       response.wet_coconut,
-    //       response.dry_coconut,
-    //       response.inside_image
-    //   ].filter(image => image);
-    // },(error)=>console.log('upload error',error)
-    // );
   }
 }
