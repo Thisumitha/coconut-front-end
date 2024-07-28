@@ -65,4 +65,11 @@
   color: #00eeff;
 }
 
+.floating-button{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
+}
+
 

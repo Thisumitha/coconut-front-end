@@ -25,7 +25,7 @@ export class ProductsServiceService {
     return this.http.post<any>(`${this.baseUrl}/login`, { username, password });
   }
 
-  createCoconutLot(coconutLotData: any): Observable<any> {
+  createCoconutLot(coconutLotData: FormData): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/coconut`, coconutLotData);
   }
 
@@ -47,6 +47,10 @@ export class ProductsServiceService {
     return this.http.put<any>(`${this.baseUrl}/coconut/${id}`, updates);
   }
 
+  findUser(username:string):Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/login/find-user/${username}`);
+  }
+
   createCompany(companyData: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/company`, companyData);
   }
@@ -63,6 +67,14 @@ export class ProductsServiceService {
     return this.http.put<any>(`${this.baseUrl}/order/${id}`, updates);
   }
 
+  updateSellerPassword(updates:any){
+    return this.http.post<any>(`${this.baseUrl}/seller/update-password/`,updates);
+  }
+
+  updateCompanyPassword(updates:any){
+    return this.http.post<any>(`${this.baseUrl}/company/update-password/`,updates);
+  }
+
   deleteOrder(id: string): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/order/${id}`);
   }
@@ -70,5 +82,9 @@ export class ProductsServiceService {
   findCompany(id:string): Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/company/${id}`);
   }
+
+  // createCoconutLot(data: FormData): Observable<any>{
+  //   return this.http.post<any>(`${this.baseUrl}/coconut`, data);
+  // }
 
 }
