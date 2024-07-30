@@ -3,16 +3,17 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { ProductsServiceService } from '../../services/products-service.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { routes } from '../../app.routes';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { AuthServiceService } from '../../service/auth-service.service';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { LoginComponent } from '../login/login.component';
 @Component({
   selector: 'app-products-page',
   standalone: true,
-  imports: [NavbarComponent, HttpClientModule, CommonModule, FooterComponent, FormsModule],
+  imports: [NavbarComponent, HttpClientModule, CommonModule, FooterComponent, FormsModule,RouterLink,LoginComponent],
   templateUrl: './products-page.component.html',
   styleUrl: './products-page.component.css'
 })

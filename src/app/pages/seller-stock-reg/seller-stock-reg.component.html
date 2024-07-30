@@ -2,13 +2,12 @@
   <div class="vh-100 bg-image mt-5 fit-image">
     <app-navbar></app-navbar>
     <br><br><br><br>
-<div class=" container row">
- 
-  <div class="col-3">
-    <button type="button" class="btn btn-primary " routerLink=""><i class="bi bi-arrow-left" ></i>Back</button>
-  </div>
-</div>
-    <div class="mask d-flex align-items-center mt-5">
+    <div class="container row">
+      <div class="col-3">
+        <button type="button" class="btn btn-primary" routerLink=""><i class="bi bi-arrow-left"></i> Back</button>
+      </div>
+    </div>
+    <div class="mask d-flex align-items-center mt-5 ">
       <div class="container">
         <br><br><br>
         <div class="row d-flex justify-content-center align-items-center">
@@ -18,40 +17,58 @@
                 <h2 class="text-uppercase text-center mb-5">Coconut Lot Details</h2>
 
                 <form class="row g-3" (ngSubmit)="onSubmit()">
-
-
-
                   <div class="col-md-6">
                     <div data-mdb-input-init class="form-outline">
-                      <input type="number" name="width" [(ngModel)]="coconutLot.width" id="form3ExampleWidth" class="form-control form-control-lg" />
+                      <input type="number" name="width" [(ngModel)]="coconutLot.width" id="form3ExampleWidth" class="form-control form-control-lg  small-font " />
                       <label class="form-label" for="form3ExampleWidth">Width</label>
                     </div>
                   </div>
 
+                  <!-- Size Dropdown -->
                   <div class="col-md-6">
                     <div data-mdb-input-init class="form-outline">
-                      <input type="text" name="size" [(ngModel)]="coconutLot.size" id="form3ExampleSize" class="form-control form-control-lg" />
+                      <select name="size" [(ngModel)]="coconutLot.size" id="form3ExampleSize" class="form-control form-control-lg small-font  ">
+                        <option value="" disabled selected>Select Size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                      </select>
                       <label class="form-label" for="form3ExampleSize">Size</label>
                     </div>
                   </div>
 
+                  <!-- Husk State Dropdown -->
                   <div class="col-md-6">
                     <div data-mdb-input-init class="form-outline">
-                      <input type="text" name="husk" [(ngModel)]="coconutLot.husk_state" id="form3ExampleHuskState" class="form-control form-control-lg" />
+                      <select name="husk" [(ngModel)]="coconutLot.husk_state" id="form3ExampleHuskState" class="form-control form-control-lg small-font ">
+                        <option value="" disabled selected>Select Husk State</option>
+                        <option value="husk">Husk</option>
+                        <option value="huskless">Huskless</option>
+                      </select>
                       <label class="form-label" for="form3ExampleHuskState">Husk State</label>
                     </div>
                   </div>
 
+                  <!-- Moisture State Dropdown -->
                   <div class="col-md-6">
                     <div data-mdb-input-init class="form-outline">
-                      <input type="text" name="moisture_state" [(ngModel)]="coconutLot.moisture_state" id="form3ExampleMoistureState" class="form-control form-control-lg" />
+                      <select name="moisture_state" [(ngModel)]="coconutLot.moisture_state" id="form3ExampleMoistureState" class="form-control form-control-lg small-font ">
+                        <option value="" disabled selected>Select Moisture State</option>
+                        <option value="wet">Wet</option>
+                        <option value="dry">Dry</option>
+                      </select>
                       <label class="form-label" for="form3ExampleMoistureState">Moisture State</label>
                     </div>
                   </div>
 
+                  <!-- Inside State Dropdown -->
                   <div class="col-md-6">
                     <div data-mdb-input-init class="form-outline">
-                      <input type="text" name="inside_state" [(ngModel)]="coconutLot.inside_state" id="form3ExampleInsideState" class="form-control form-control-lg" />
+                      <select name="inside_state" [(ngModel)]="coconutLot.inside_state" id="form3ExampleInsideState" class="form-control form-control-lg small-font ">
+                        <option value="" disabled selected>Select Inside State</option>
+                        <option value="with_water">With Water</option>
+                        <option value="without_water">Without Water</option>
+                      </select>
                       <label class="form-label" for="form3ExampleInsideState">Inside State</label>
                     </div>
                   </div>
