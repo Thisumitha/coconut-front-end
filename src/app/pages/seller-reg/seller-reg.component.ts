@@ -32,7 +32,7 @@ export class SellerRegComponent {
     formData.append('email', this.seller.email);
     formData.append('phone_number', this.seller.phone_number);
 
-    this.http.post('http://localhost:3000/seller', formData).subscribe(
+    this.http.post('http://localhost:3000/seller', this.seller).subscribe(
       (response) => {
         console.log('Upload successful', response);
         Swal.fire({
