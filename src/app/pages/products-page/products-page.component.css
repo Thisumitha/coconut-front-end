@@ -86,3 +86,14 @@
 .back-color{
   background-color: #f8cf5e;
 }
+
+#carouselExampleIndicators {
+  /* width: 700px;
+  height: 400px; */
+  overflow: hidden;
+}
+.carousel-item img {
+  width: 50vw; /* Make the image fill the width of the carousel */
+  height: 50vh; /* Make the image fill the height of the carousel */
+  object-fit: contain; /* Ensure the image covers the container without distortion */
+}
