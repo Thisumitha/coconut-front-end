@@ -8,6 +8,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { CoconutSellerComponent } from './pages/coconut-seller/coconut-seller.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { SellerStockRegComponent } from './pages/seller-stock-reg/seller-stock-reg.component';
+import { SellerRegComponent } from './pages/seller-reg/seller-reg.component';
 
 export const routes: Routes = [
   {
@@ -45,5 +46,9 @@ export const routes: Routes = [
   {
     path: "seller-stockReg",
     component: SellerStockRegComponent
+  },
+  {
+    path: "seller-Reg",
+    component: SellerRegComponent
   }
 ];
