@@ -3,6 +3,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { ProductsServiceService } from '../../services/products-service.service';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-seller-stock-reg',
   standalone: true,
@@ -22,7 +23,7 @@ export class SellerStockRegComponent {
     quantity:null,
     seller:''
   };
-  constructor(private productService:ProductsServiceService){}
+  constructor(private productService:ProductsServiceService, private location:Location){}
 
   onFileSelected(event:any, key: string){
     if(event.target.files.length>0){
@@ -63,5 +64,9 @@ export class SellerStockRegComponent {
       },
       (error)=>console.log('Upload error',error)
     )
+  }
+
+  goBack(){
+    this.location.back();
   }
 }

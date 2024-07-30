@@ -1,6 +1,6 @@
 <div class="container-fluid back-color">
   <app-navbar></app-navbar>
-  <br><br><br><br>
+  <br><br><br>
   <div class=" container row">
 
     <div class="col-3">
@@ -9,12 +9,13 @@
   </div>
   <div class="container-fluid products">
     <p class="text-center fw-bold fs-3 ">Company Orders</p>
+    <div class="text-end"><button class="btn btn-warning shadow" (click)="goToCreateLot()">Add Coconut Lot</button></div>
     <div class="row p-3 gy-3">
       <div *ngFor="let card of companies" class="col-lg-3 p-3 mx-auto col-sm-12">
         <div class="card border  border-2 shadow">
           <img src="{{card.company.br_image}}" class="card-img">
           <div class="card-img-overlay">
-            <p class="card-subtitle fs-5 fw-semibold text-white text-center">A Fully fledged Gym management system</p>
+            <p class="card-subtitle fs-5 fw-semibold text-white text-center"></p>
             <a href="" data-bs-toggle="modal" data-bs-target="#products-modal" (click)="setValue(card)"
               class="btn btn-outline-light detail-btn btn-sm">More Details</a>
           </div>
@@ -102,5 +103,5 @@
     </div>
   </div>
 
-  <button class="btn btn-primary floating-button shadow" (click)="goToCreateLot()">Add Coconut Lot</button>
+  <!-- <button class="btn btn-primary floating-button shadow" (click)="goToCreateLot()">Add Coconut Lot</button> -->
 </div>
