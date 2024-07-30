@@ -6,7 +6,7 @@
       <div class="card border  border-2 shadow">
         <img src="{{card.company.br_image}}" class="card-img" >
         <div class="card-img-overlay">
-            <p class="card-subtitle fs-5 fw-semibold text-white text-center">A Fully fledged Gym management system</p>
+            <p class="card-subtitle fs-5 fw-semibold text-white text-center"></p>
             <a href="" data-bs-toggle="modal" data-bs-target="#products-modal" (click)="setValue(card)" class="btn btn-outline-light detail-btn btn-sm">More Details</a>
         </div>
         <ul class="list-group list-group-flush text-center">
@@ -36,7 +36,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{selectedOrder?.product_name}}</h1>
+        <h1 class="modal-title fs-5 fw-bold" id="staticBackdropLabel">{{selectedOrder?.company.company_name}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
