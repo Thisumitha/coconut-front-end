@@ -8,7 +8,12 @@
 </div>
 <div class="container-fluid products">
   <p class="text-center fw-bold fs-3 ">Coconut Lots</p>
-  <div class="text-end"><button class="btn btn-success shadow me-3" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button></div>
+  <div class="row text-end">
+    <div class="col">
+      <button class="btn btn-success shadow me-3" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button>
+      <button class="btn btn-warning shadow me-3" data-bs-toggle="modal" data-bs-target="#newOrderModal">View Orders</button>
+    </div>
+  </div>
   <div class="row p-3 gy-3">
 
     <div *ngFor="let card of coconutLots" class="col-lg-3 p-3 mx-auto col-sm-12">
