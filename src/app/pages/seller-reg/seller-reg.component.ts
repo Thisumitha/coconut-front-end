@@ -6,6 +6,7 @@ import { ContactUsComponent } from '../../components/contact-us/contact-us.compo
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-seller-reg',
@@ -23,7 +24,7 @@ export class SellerRegComponent {
     phone_number: ''
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private location:Location) {}
 
   onSubmit() {
     const formData = new FormData();
@@ -46,5 +47,9 @@ export class SellerRegComponent {
         console.error('Upload failed', error);
       }
     );
+  }
+
+  goBack(){
+    this.location.back();
   }
 }
