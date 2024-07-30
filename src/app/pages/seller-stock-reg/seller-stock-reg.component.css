@@ -36,3 +36,6 @@
         background-size: cover; background-repeat: no-repeat; background-position: center;
       }
       
+      .small-font {
+        font-size: 0.875rem; /* Adjust as needed */
+      }

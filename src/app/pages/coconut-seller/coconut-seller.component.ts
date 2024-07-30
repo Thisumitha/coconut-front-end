@@ -4,7 +4,7 @@ import { ProductsServiceService } from '../../services/products-service.service'
 import { OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-coconut-seller',
   standalone: true,
-  imports: [NavbarComponent,CommonModule,FormsModule],
+  imports: [NavbarComponent,CommonModule,FormsModule,RouterLink],
   templateUrl: './coconut-seller.component.html',
   styleUrl: './coconut-seller.component.css'
 })
