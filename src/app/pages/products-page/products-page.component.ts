@@ -9,11 +9,10 @@ import { FooterComponent } from "../../components/footer/footer.component";
 import { AuthServiceService } from '../../service/auth-service.service';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
-import { LoginComponent } from '../login/login.component';
 @Component({
   selector: 'app-products-page',
   standalone: true,
-  imports: [NavbarComponent, HttpClientModule, CommonModule, FooterComponent, FormsModule,RouterLink,LoginComponent],
+  imports: [NavbarComponent, HttpClientModule, CommonModule, FooterComponent, FormsModule,RouterLink],
   templateUrl: './products-page.component.html',
   styleUrl: './products-page.component.css'
 })
