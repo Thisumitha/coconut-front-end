@@ -10,6 +10,7 @@ import { DetailsComponent } from './pages/details/details.component';
 import { SellerStockRegComponent } from './pages/seller-stock-reg/seller-stock-reg.component';
 import { SellerRegComponent } from './pages/seller-reg/seller-reg.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
+import { OrdersComponent } from './pages/orders/orders.component';
 
 export const routes: Routes = [
   {
@@ -55,5 +56,9 @@ export const routes: Routes = [
   {
     path: "payment",
     component: PaymentsComponent
+  },
+  {
+    path: "orders",
+    component: OrdersComponent
   }
 ];

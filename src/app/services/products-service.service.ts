@@ -83,6 +83,10 @@ export class ProductsServiceService {
     return this.http.get<any>(`${this.baseUrl}/company/${id}`);
   }
 
+  getOrders():Observable<any>{
+    return this.http.get(`${this.baseUrl}/order`);
+  }
+
   // createCoconutLot(data: FormData): Observable<any>{
   //   return this.http.post<any>(`${this.baseUrl}/coconut`, data);
   // }
