@@ -1,15 +1,16 @@
 <app-navbar></app-navbar>
 <br><br><br><br>
 <div class=" container row">
- 
+
   <div class="col-3">
     <button type="button" class="btn btn-primary " routerLink="/login"><i class="bi bi-arrow-left" ></i>Back</button>
   </div>
 </div>
 <div class="container-fluid products">
   <p class="text-center fw-bold fs-3 ">Coconut Lots</p>
+  <div class="text-end"><button class="btn btn-success shadow me-3" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button></div>
   <div class="row p-3 gy-3">
- 
+
     <div *ngFor="let card of coconutLots" class="col-lg-3 p-3 mx-auto col-sm-12">
       <div class="card border  border-2">
         <img src="{{card.lot_image}}" class="card-img" >
@@ -23,7 +24,7 @@
         </ul>
     </div>
     </div>
-    
+
   </div>
 </div>
 
@@ -36,7 +37,6 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- Carousel -->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -97,7 +97,7 @@
     </div>
   </div>
 </div>
-<button class="btn btn-primary floating-button shadow" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button>
+<!-- <button class="btn btn-primary floating-button shadow" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button> -->
 
 <div class="modal fade" id="newOrderModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -122,7 +122,7 @@
           </div> -->
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Place Order</button>
           </div>
         </form>
       </div>
