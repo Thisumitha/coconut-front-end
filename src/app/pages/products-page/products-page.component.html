@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="container-fluid products">
-    <p class="text-center fw-bold fs-3">Coconut Lots</p>
+    <p class="text-center fw-bold fs-2">Coconut Lots</p>
     <div class="row text-end">
       <div class="col">
         <button class="btn btn-success me-3 shadow" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button>
@@ -88,7 +88,7 @@
         <hr>
         <p class="fw-bold fs-5 ms-4">Details</p>
         <ul class="">
-          <li>Width - {{selectedLot?.width}}</li>
+          <li> Width - {{selectedLot?.width}}</li>
           <li>Size - {{selectedLot?.size}}</li>
           <li>Inside - {{selectedLot?.inside_state}}</li>
           <li>Husk - {{selectedLot?.husk_state}}</li>
@@ -96,6 +96,7 @@
           <li class="fw-bold">Quantity - {{selectedLot?.quantity}}</li>
         </ul>
         <div class="modal-footer">
+          <button type="button" class="btn btn-success ml-4" >Review</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -114,6 +115,10 @@
         <div class="modal-body">
           <form (ngSubmit)="createOrder()">
             <div class="mb-3">
+              <label for="buyingQuantity" class="form-label">Buying Quantity</label>
+              <input type="number" class="form-control" id="buyingQuantity" [(ngModel)]="newOrder.buying_quantity" name="buying_quantity" required>
+            </div>
+            <div class="mb-3">
               <label for="buyingPrice" class="form-label">Buying Price</label>
               <input type="number" class="form-control" id="buyingPrice" [(ngModel)]="newOrder.buying_price" name="buying_price" required>
             </div>
@@ -124,7 +129,6 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Place Order</button>
-              <button type="button" class="btn btn-success ml-4" >Review</button>
             </div>
           </form>
         </div>
