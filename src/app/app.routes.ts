@@ -11,6 +11,7 @@ import { SellerStockRegComponent } from './pages/seller-stock-reg/seller-stock-r
 import { SellerRegComponent } from './pages/seller-reg/seller-reg.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { OrdersComponent } from './pages/orders/orders.component';
+import { LotsPageComponent } from './pages/lots-page/lots-page.component';
 
 export const routes: Routes = [
   {
@@ -60,5 +61,9 @@ export const routes: Routes = [
   {
     path: "orders",
     component: OrdersComponent
+  },
+  {
+    path:"lots",
+    component: LotsPageComponent
   }
 ];

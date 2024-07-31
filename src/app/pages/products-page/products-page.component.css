@@ -18,9 +18,11 @@
 .card {
   position: relative;
   border: none;
+  width: 40vw;
 }
 .card-img {
-  height: 300px;
+  height: 500px;
+  width: 40vw;
   object-fit: cover;
   border-radius: 10px;
 }

@@ -79,6 +79,10 @@ export class ProductsServiceService {
     return this.http.delete<any>(`${this.baseUrl}/order/${id}`);
   }
 
+  deleteLot(id:string):Observable<any>{
+    return this.http.delete<any>(`${this.baseUrl}/coconut/${id}`);
+  }
+
   findCompany(id:string): Observable<any>{
     return this.http.get<any>(`${this.baseUrl}/company/${id}`);
   }
