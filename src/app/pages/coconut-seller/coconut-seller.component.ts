@@ -34,6 +34,7 @@ export class CoconutSellerComponent implements OnInit{
 
   ngOnInit(): void {
     this.getCompanies();
+    this.checkOrders();
     this.getSeller();
     this.getOrder();
     // this.productService.currentSeller.subscribe(seller => this.company = seller);
@@ -65,7 +66,7 @@ export class CoconutSellerComponent implements OnInit{
     this.productService.getAllCompanies().subscribe(response=>{
       this.companies = response;
       console.log(this.companies);
-
+      this.checkOrders();
     },
     error =>{
       console.error('Error fetching coconuts',error);
@@ -249,6 +250,18 @@ export class CoconutSellerComponent implements OnInit{
   })
   }
 
+  delOrder(id:string){
+    this.productService.deleteOrder(id).subscribe(res=>{
+      if(res){
+        console.log('rejected order', id);
+        this.getCompanies();
+      }else{
+        console.log("error");
+        this.getCompanies();
+      }
+    });
+  }
+
   deleteOrder(){
     this.productService.deleteOrder(this.selectedOrder._id).subscribe(res=>{
       if(res){
@@ -268,6 +281,17 @@ export class CoconutSellerComponent implements OnInit{
 
   goToCreateLot(){
     this.router.navigate(['/seller-stockReg'])
+  }
+
+  checkOrders(){
+    if(this.companies){
+      this.companies.forEach((comp)=>{
+        if(comp.buying_quantity<=0){
+          console.log('deletion',comp);
+          this.delOrder(comp._id);
+        }
+      })
+    }
   }
 
 }

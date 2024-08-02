@@ -27,7 +27,7 @@ export class CheckoutPageComponent {
   ngOnInit(){
     this.productService.currentSeller.subscribe(seller => this.company = seller);
     console.log(this.company);
-
+    
   }
 
   sendEmailToCustomer(){

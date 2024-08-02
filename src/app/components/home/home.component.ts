@@ -1,7 +1,6 @@
 import { Component, ElementRef} from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { IntroPageComponent } from '../intro-page/intro-page.component';
-import { ProductsComponent } from '../products/products.component';
 import { ViewChild } from '@angular/core';
 import { FooterComponent } from '../footer/footer.component';
 import { ReviewCardsComponent } from '../review-cards/review-cards.component';
@@ -14,7 +13,7 @@ import { CarouselComponent } from '../carousel/carousel.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent,IntroPageComponent,ProductsComponent,FooterComponent,ReviewCardsComponent,ContactUsComponent,HttpClientModule,CardsComponent,ServicesComponent,CarouselComponent],
+  imports: [NavbarComponent,IntroPageComponent,FooterComponent,ReviewCardsComponent,ContactUsComponent,HttpClientModule,CardsComponent,ServicesComponent,CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

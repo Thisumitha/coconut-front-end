@@ -12,8 +12,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact-us.component.css'
 })
 export class ContactUsComponent {
+  tmpMsg=''
 
-  private emailKey = 'IVC2gVx3E9IOOqYUZ';
+  private emailKey = 'Wyun_B-TucLaPaAQK';
   message = {
     name:'',
     email:'',
@@ -25,8 +26,8 @@ export class ContactUsComponent {
 
   sendEmail(){
     const templateParam = {
-      toEmail: 'coorayscoconut@gmail.com',
-      message: this.message.message
+      to_email: 'coorayscoconut@gmail.com',
+      message: `Details of Customer Name: ${this.message.name} Email: ${this.message.email} Message: ${this.message.message}`
     };
 
     emailJs.send('service_uhcbsno','template_b3qq8dd',templateParam,this.emailKey)
