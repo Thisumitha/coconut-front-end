@@ -40,6 +40,7 @@ export class LotsPageComponent {
         text:"Deleted Successfully",
         icon:"success"
       })
+      this.getLots();
     })
   }
 
