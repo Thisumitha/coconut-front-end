@@ -25,13 +25,11 @@ export class ContactUsComponent {
 
   sendEmail(){
     const templateParam = {
-      from_name: this.message.name,
-      from_email: this.message.email,
-      from_number: this.message.number,
+      toEmail: 'coorayscoconut@gmail.com',
       message: this.message.message
     };
 
-    emailJs.send('service_dl0npjj','template_enh9xkq',templateParam,this.emailKey)
+    emailJs.send('service_uhcbsno','template_b3qq8dd',templateParam,this.emailKey)
     .then((response : EmailJSResponseStatus)=>{
       console.log('Email sent successfully', response.status, response.text);
       Swal.fire({

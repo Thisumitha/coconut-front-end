@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="row p-3 gy-3">
-      <div *ngFor="let card of coconutLots" class="col-lg-3 p-3 mx-auto col-sm-12">
+      <div *ngFor="let card of coconutLots" class="col-lg-6 col-sm-12 mx-auto">
         <div class="card border border-2">
           <img src="{{card.lot_image}}" class="card-img">
           <div class="card-img-overlay">
@@ -122,8 +122,16 @@
         <div class="modal-body">
           <form (ngSubmit)="createOrder()">
             <div class="mb-3">
-              <label for="buyingQuantity" class="form-label">Buying Quantity</label>
-              <input type="number" class="form-control" id="buyingQuantity" [(ngModel)]="newOrder.buying_quantity" name="buying_quantity" required>
+              <label for="type" class="form-label">Select Type</label>
+              <select name="size" id="type" class="form-control form-control small-font">
+                <option value="" disabled selected>Select Size</option>
+                <option value="dry">Dry</option>
+                <option value="wet">Wet</option>
+                <option value="husk">Husk Coconut</option>
+                <option value="half-fish">Half Fish Coconut</option>
+                <option value="fish">Fish Coconut</option>
+              </select>
+
             </div>
             <div class="mb-3">
               <label for="buyingPrice" class="form-label">Buying Price</label>

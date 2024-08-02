@@ -88,7 +88,7 @@ export class CoconutSellerComponent implements OnInit{
       to_email: this.selectedOrder.company.email,
       to_name:this.selectedOrder.company.company_name,
       from_name:this.seller.name,
-      message:"Your Buying order has been declined"
+      message:`Your Buying order has been declined OrderID - ${this.selectedOrder._id}`
     };
 
     emailjs.send('service_uhcbsno','template_b3qq8dd', templateParams, this.emailKey)
